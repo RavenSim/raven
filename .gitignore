@@ -6,8 +6,8 @@ bin/*
 .loadpath
 .buildpath
 *.launch
-*.jar
-*.class
+[^lib/]*.jar
+[^lib/]*.class
 *.tmp
 *.swp
 *.bak
