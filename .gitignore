@@ -11,3 +11,4 @@ bin/*
 *.tmp
 *.swp
 *.bak
+raven.log
