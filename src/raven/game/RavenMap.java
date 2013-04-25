@@ -32,6 +32,8 @@ public class RavenMap {
 	/** the walls that comprise the current map's architecture. */
 	private ArrayList<Wall2D> walls;
 	
+	//add obstacle list here ********
+	
 	/** trigger are objects that define a region of space. When a raven bot
 	 * enters that area, it 'triggers' an event. That event may be anything
 	 * from increasing a bot's health to opening a door or requesting a lift.

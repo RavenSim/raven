@@ -379,7 +379,7 @@ public class RavenSteering {
 
 				//create a force in the direction of the wall normal, with a 
 				//magnitude of the overshoot
-				SteeringForce = obst.get(ClosestObst).normalize().mul(overShoot.length());
+				SteeringForce = obst.get(ClosestObst).normal().mul(overShoot.length());
 			}
 
 		}//next feeler

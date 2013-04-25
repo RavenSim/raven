@@ -32,6 +32,10 @@ public abstract class BaseGameEntity {
 	protected BaseGameEntity(int id) {
 		setID(id);
 	}
+	
+	protected BaseGameEntity(){
+		
+	}
 
 	public void update(double delta) {}
 	public abstract void render();

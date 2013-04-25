@@ -32,6 +32,10 @@ import raven.utils.MapSerializer;
 import raven.utils.MapLoadedException;
 
 public class RavenGame {
+	/** new obstacle list*/
+	raven.game.Obstacle obst;
+	List<Obstacle> obstList = new ArrayList<Obstacle>();
+	
 	/** the current game map */
 	private RavenMap map;
 
@@ -122,6 +126,34 @@ public class RavenGame {
 			System.err.println("Failed to load default map: " + RavenScript.getString("StartMap") + ". Reason: \n" + e.getLocalizedMessage());
 			System.exit(1);
 		}
+		
+		/** Creates 3 Obstacles on the map: obst, obstTwo, obstThree*/
+		List<Vector2D> pointArray = new ArrayList<Vector2D>();
+		pointArray.add(new Vector2D(315, 55));
+		pointArray.add(new Vector2D(330, 110));
+		pointArray.add(new Vector2D(345, 120));
+		pointArray.add(new Vector2D(322, 140));
+		pointArray.add(new Vector2D(300, 110));
+		Obstacle obst = new Obstacle(pointArray);
+		obst.setPos(new Vector2D(310, 110));
+		obstList.add(obst);
+		List<Vector2D> pointArrayTwo = new ArrayList<Vector2D>();
+		pointArrayTwo.add(new Vector2D(80, 55));
+		pointArrayTwo.add(new Vector2D(95, 80));
+		pointArrayTwo.add(new Vector2D(115, 95));
+		pointArrayTwo.add(new Vector2D(90, 110));
+		pointArrayTwo.add(new Vector2D(70, 102));
+		obstList.add(obst);
+		Obstacle obstTwo = new Obstacle(pointArrayTwo);
+		obstList.add(obstTwo);
+		List<Vector2D> pointArrayThree = new ArrayList<Vector2D>();
+		pointArrayThree.add(new Vector2D(315, 55));
+		pointArrayThree.add(new Vector2D(330, 110));
+		pointArrayThree.add(new Vector2D(345, 120));
+		pointArrayThree.add(new Vector2D(322, 140));
+		pointArrayThree.add(new Vector2D(300, 110));
+		Obstacle obstThree = new Obstacle(pointArrayThree);
+		obstList.add(obstThree);
 	}
 
 	/** The usual suspects */
@@ -130,6 +162,9 @@ public class RavenGame {
 		// render the map
 		map.render();
 
+		for(Obstacle obst : obstList){
+			obst.render();
+		}
 		graveMarkers.render();
 		
 		

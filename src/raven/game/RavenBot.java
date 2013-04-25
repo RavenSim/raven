@@ -330,7 +330,7 @@ public class RavenBot extends MovingEntity implements IRavenBot {
 		// draw the head
 		GameCanvas.brownPen();
 		GameCanvas.brownBrush();
-		GameCanvas.circle(pos(), getBRadius() * 0.5);
+		GameCanvas.circle(pos(), getBRadius() * 0.5); //****
 
 		// render the bot's weapon
 		weaponSys.renderCurrentWeapon();
